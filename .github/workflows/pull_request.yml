@@ -20,7 +20,7 @@ jobs:
               run: npm install
               
             - name: Run ts-prone
-              run: npm run ts-pune
+              run: npx run ts-pune
 
     docker-image:
         needs: build
