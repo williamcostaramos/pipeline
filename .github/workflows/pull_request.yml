@@ -1,6 +1,6 @@
 name: Pull Request
 on:
-    push
+    pull_request
 
 jobs:
     build:
@@ -19,6 +19,13 @@ jobs:
             - name: Install dependencies
               run: npm install
 
+    docker-image:
+        needs: build
+        name: Create Image Docker
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v3
             
 
     
