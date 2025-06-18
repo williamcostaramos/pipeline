@@ -18,23 +18,16 @@ jobs:
 
             - name: Install dependencies
               run: npm install
+              
+            - name: Run ts-prone
+              run: npm run ts-pune
 
-    codigoMorto:
-        needs: build
-        name: Limpa codigo nao usa
+    docker-image:
+        name: Create Image Docker
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-              name: Checkout
-
-            - uses: actions/cache@v3
-              name: Cache application
-              with:
-                path: node_modules
-                key: ${{runner.os}}-${{hashFiles('**/package-lock.json')}}
-
-            - name: Run ts-prone
-              run: npm run ts-pune 
+            - name: checkout
+              uses: actions/checkout@v3
             
 
     
