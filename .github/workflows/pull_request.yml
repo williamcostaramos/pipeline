@@ -1,0 +1,24 @@
+name: Pull Request
+on:
+    push
+
+jobs:
+    build:
+        name: Build Application
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              name: Checkout
+
+            - uses: actions/cache@v2
+              name: Cache application
+              with:
+                path: node_modules
+                key: ${{runner.os}}-{{hashFiles('**/package-lock')}}
+
+            - name: Install dependencies
+              run: npm install
+
+            
+
+    
