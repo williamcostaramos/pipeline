@@ -18,9 +18,6 @@ jobs:
 
             - name: Install dependencies
               run: npm install
-              
-            - name: Run ts-prone
-              run: npx run ts-pune
 
     docker-image:
         needs: build
