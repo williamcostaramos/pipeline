@@ -1,6 +1,6 @@
 name: Pull Request
 on:
-    push
+    pull_request
 
 jobs:
     build:
@@ -19,6 +19,22 @@ jobs:
             - name: Install dependencies
               run: npm install
 
+    codigoMorto:
+        needs: build
+        name: Limpa codigo nao usa
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              name: Checkout
+
+            - uses: actions/cache@v3
+              name: Cache application
+              with:
+                path: node_modules
+                key: ${{runner.os}}-${{hashFiles('**/package-lock.json')}}
+
+            - name: Run ts-prone
+              run: npm run ts-pune 
             
 
     

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "node": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "ts-prune":"npx ts-prune --error"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "ts-node-dev": "^2.0.0",
+    "ts-prune": "^0.10.3",
     "typescript": "^5.8.3"
   }
 }
