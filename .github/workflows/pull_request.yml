@@ -23,6 +23,7 @@ jobs:
               run: npm run ts-pune
 
     docker-image:
+        needs: build
         name: Create Image Docker
         runs-on: ubuntu-latest
         steps:
