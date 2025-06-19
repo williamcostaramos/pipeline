@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/app.ts",
     "ts-prune": "npx ts-prune --error",
-    "test": "jest"
+    "test:cover": "jest --no-cache --coverage --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
