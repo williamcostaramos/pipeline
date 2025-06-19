@@ -1,0 +1,13 @@
+name: Push
+on: [push]
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v3
+            - name: Run Install Dependencies
+              run: yarn install
+            - name: Run Unit Test
+              run: yarn test:cover
