@@ -20,6 +20,8 @@ jobs:
               run: yarn install
             - name: Run Unit Test
               run: yarn test:cover
+            - name: Run remove code no used
+              run: yarn ts-prune
 
     docker-image:
         needs: build
